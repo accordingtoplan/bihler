@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Johanniter Uhldingen Mühlhofen · Bihler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: OEM's soft ground and pill controls, Alright's display type, Audo's full-bleed rooms with serif captions. One light look, set explicitly. */
+:root {
+  --ground: #f5f5f2;
+  --paper: #ffffff;
+  --ink: #1b1b19;
+  --grey: #8b8b85;
+  --pill: #e7e7e2;
+  --line: #dcdcd6;
+  --notice: #cfe8c4;
+  --notice-ink: #2f4a26;
+  --dot: #e5484d;
+  --lake: #6f8fce;
+  --dusk: #e39a6a;
+  --sans: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Instrument Serif", "Times New Roman", Georgia, serif;
+  --pad: max(16px, env(safe-area-inset-left, 0px));
+  --padr: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+@media (min-width: 900px) { :root { --pad: max(24px, env(safe-area-inset-left, 0px)); --padr: max(24px, env(safe-area-inset-right, 0px)); } }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 400 15px/1.5 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid var(--lake); outline-offset: 2px; }
+.in { padding-left: var(--pad); padding-right: var(--padr); }
+.pill { display: inline-flex; align-items: center; gap: 8px; height: 34px; padding: 0 14px; border-radius: 999px; background: var(--pill); border: 0; font-size: 13px; font-weight: 500; cursor: pointer; white-space: nowrap; transition: background .2s, color .2s; }
+.pill:hover { background: #dcdcd6; }
+.pill.dark { background: var(--ink); color: var(--ground); }
+.pill.dark:hover { background: #33332f; }
+.pill[aria-pressed="true"] { background: var(--ink); color: var(--ground); }
+.small { font-size: 12px; color: var(--grey); }
+.label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+
+/* Top: OEM */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; padding-block: 14px; background: color-mix(in srgb, var(--ground) 88%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--ground); z-index: 50; }
+.top-l, .top-r { display: flex; gap: 6px; align-items: center; }
+.top-r { justify-content: flex-end; }
+.logo { width: 64px; color: var(--ink); display: block; }
+.logo svg { width: 100%; height: auto; display: block; }
+.notice { display: inline-flex; align-items: center; gap: 10px; margin-top: 6px; padding: 9px 14px 9px 12px; border-radius: 14px; background: var(--notice); color: var(--notice-ink); font-size: 13px; line-height: 1.25; }
+.notice i { width: 7px; height: 7px; border-radius: 50%; background: var(--paper); flex: none; }
+.notice small { display: block; font-size: 10px; opacity: .75; }
+@media (max-width: 760px) { .hide-s { display: none; } .logo { width: 52px; } }
+
+/* Hero: Alright */
+.hero { padding-block: clamp(48px, 9vw, 120px) clamp(40px, 6vw, 72px); }
+.hero h1 { margin: 0; font-weight: 600; font-size: clamp(30px, 7.6vw, 118px); line-height: .94; letter-spacing: -.045em; text-wrap: balance; }
+.hero h1 .g { color: var(--grey); }
+.hero h1 .grad { background: linear-gradient(90deg, var(--lake), #b28fc4 45%, var(--dusk)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; align-items: center; }
+
+
+/* Feature: Audo */
+.feature { position: relative; margin-top: 0; height: min(86svh, 860px); min-height: 460px; overflow: hidden; background: #2a2622; color: #fff; }
+.feature img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.feature::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,0) 30%, rgba(0,0,0,0) 55%, rgba(0,0,0,.42)); }
+.feature-c { position: absolute; inset: auto 0 0 0; z-index: 2; display: grid; gap: 10px; justify-items: center; text-align: center; padding-block: 0 44px; }
+.feature-c h2 { margin: 0; font: italic 400 clamp(44px, 7vw, 104px)/.95 var(--serif); letter-spacing: -.01em; }
+.feature-c p { margin: 0; font-size: 13px; letter-spacing: .02em; }
+.feature .pill { background: rgba(255,255,255,.88); color: var(--ink); }
+.feature-top { position: absolute; top: 0; left: 0; right: 0; z-index: 2; display: flex; justify-content: space-between; padding-block: 16px; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+
+/* Section heads */
+.sec { padding-block: clamp(64px, 9vw, 120px) 0; }
+.sh { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 24px; margin-bottom: 28px; }
+.sh h2 { margin: 0; font-weight: 600; font-size: clamp(30px, 4.4vw, 60px); line-height: 1; letter-spacing: -.035em; max-width: 18ch; text-wrap: balance; }
+.sh h2 .g { color: var(--grey); }
+.ctrl { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.seg { display: inline-flex; padding: 3px; border-radius: 999px; background: var(--pill); }
+.seg .pill { background: transparent; height: 30px; }
+.seg .pill[aria-pressed="true"] { background: var(--paper); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
+
+/* Project grid: OEM shapes, Audo captions */
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-flow: dense; gap: 40px 12px; }
+.grid .card:nth-child(7n+1) { grid-column: span 2; }
+.card { display: grid; gap: 12px; align-content: start; cursor: pointer; min-width: 0; text-align: left; background: none; border: 0; padding: 0; }
+.card .ph { position: relative; overflow: hidden; aspect-ratio: 4 / 3; border-radius: 6px; background: var(--pill); }
+.grid .card:nth-child(7n+1) .ph { aspect-ratio: 16 / 9.4; }
+.grid .card:nth-child(3n+2) .ph { border-radius: 6px 6px 120px 6px; }
+.grid .card:nth-child(5n+3) .ph { border-radius: 180px 180px 6px 6px; }
+.card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.card:hover img { transform: scale(1.03); }
+.card h3 { margin: 0; font: italic 400 clamp(24px, 2.4vw, 34px)/1.02 var(--serif); }
+.card .meta { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--grey); }
+.card .meta b { color: var(--ink); font-weight: 500; }
+.list { display: grid; }
+.row { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 2fr) minmax(0, 1.2fr) minmax(0, 1.2fr) 70px; gap: 16px; align-items: baseline; padding: 14px 0; border: 0; background: none; text-align: left; cursor: pointer; font-size: 14px; }
+.row:hover { background: var(--paper); }
+.row .h { font: italic 400 22px/1.1 var(--serif); }
+.row span:not(.h) { color: var(--grey); }
+.row span:first-child { color: var(--ink); font-weight: 500; }
+@media (max-width: 860px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .row .c3, .row .c4 { display: none; }
+}
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } .grid .card:nth-child(7n+1) { grid-column: auto; } }
+.empty { padding: 40px 0; color: var(--grey); }
+
+/* Chairs */
+.chairs { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(180px, 220px); gap: 8px; overflow-x: auto; padding-bottom: 12px; scroll-snap-type: x proximity; scrollbar-width: thin; }
+.chair { scroll-snap-align: start; background: #ebebec; border-radius: 6px; overflow: hidden; display: grid; }
+.chair img { aspect-ratio: 1; object-fit: cover; width: 100%; }
+.chair dl { margin: 0; padding: 10px 12px 12px; display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 1px 6px; font-size: 12px; background: var(--paper); }
+.chair dt { color: var(--grey); font-weight: 600; }
+.chair dd { margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Service: OEM tiles */
+.svc { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.tile { background: var(--paper); border-radius: 20px; padding: 22px; display: grid; gap: 48px; align-content: start; min-height: 220px; }
+.tile .label { color: var(--grey); }
+.tile h3 { margin: 0 0 8px; font-weight: 600; font-size: 24px; letter-spacing: -.02em; }
+.tile p { margin: 0; color: #4b4b47; font-size: 14px; }
+.team { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }
+.team .tile { min-height: 0; background: var(--pill); }
+.team .big { font-weight: 600; font-size: clamp(26px, 3vw, 40px); line-height: 1.05; letter-spacing: -.03em; }
+.team .big .g { color: var(--grey); }
+@media (max-width: 860px) { .svc { grid-template-columns: 1fr 1fr; } .team { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .svc { grid-template-columns: 1fr; } }
+
+/* Haus: Audo */
+.haus { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; align-items: stretch; }
+.haus .im { border-radius: 6px 6px 220px 6px; overflow: hidden; min-height: 420px; background: var(--pill); }
+.haus .im img { width: 100%; height: 100%; object-fit: cover; }
+.haus .tx { background: #e9e3da; border-radius: 6px; padding: clamp(24px, 4vw, 48px); display: grid; align-content: space-between; gap: 32px; }
+.haus h3 { margin: 0; font: italic 400 clamp(40px, 5vw, 76px)/.95 var(--serif); }
+.haus p { margin: 0 0 12px; max-width: 46ch; color: #3c3a36; }
+.haus.usm .tx { background: var(--paper); }
+.haus.wood .tx { background: #e3dbcd; }
+.haus.flip .im { border-radius: 220px 6px 6px 6px; }
+@media (max-width: 760px) { .haus.flip .im { order: -1; } }
+@media (max-width: 760px) { .haus { grid-template-columns: 1fr; } .haus .im { min-height: 320px; } }
+
+/* Clients: Alright */
+.clients { overflow: hidden; background: var(--paper); margin-top: clamp(64px, 9vw, 120px); }
+.marquee { display: flex; gap: 56px; width: max-content; padding-block: 26px; font-weight: 600; font-size: clamp(22px, 2.6vw, 34px); letter-spacing: -.03em; color: var(--grey); }
+@media (prefers-reduced-motion: no-preference) { .marquee { animation: slide 48s linear infinite; } }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* Footer */
+footer { padding-block: 64px 120px; display: grid; gap: 40px; }
+.foot-logo { color: var(--ink); width: 150px; display: block; }
+.foot-logo svg { width: 100%; height: auto; display: block; }
+.foot-cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; font-size: 13px; }
+.fnews { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 20px 8vw; align-items: end; padding: clamp(24px, 4vw, 40px); background: var(--paper); border-radius: 20px; }
+.fh { margin: 0 0 6px; font: italic 400 clamp(36px, 4vw, 56px)/1 var(--serif); }
+.nl { display: flex; flex-wrap: wrap; gap: 8px; }
+.nl input { flex: 1 1 220px; min-width: 0; height: 44px; border-radius: 999px; border: 1px solid var(--line); background: var(--ground); padding: 0 18px; font: inherit; color: var(--ink); }
+.nl .pill { height: 44px; padding: 0 20px; }
+.nl p { flex-basis: 100%; margin: 0; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.fbottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; }
+.fbottom .proto { margin: 0; text-align: right; line-height: 1.6; }
+.foot-cols p + p { margin-top: 12px; }
+@media (max-width: 760px) { .fnews { grid-template-columns: 1fr; } .fbottom .proto { text-align: left; } }
+.foot-cols h4 { margin: 0 0 8px; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--grey); font-weight: 600; }
+.foot-cols p { margin: 0; }
+@media (max-width: 760px) { .foot-cols { grid-template-columns: 1fr 1fr; } }
+
+/* Floating chip: OEM */
+.float { position: fixed; z-index: 45; right: calc(var(--padr) + env(safe-area-inset-right, 0px) * 0); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); display: flex; gap: 10px; align-items: center; padding: 10px 16px 10px 14px; border-radius: 14px; background: color-mix(in srgb, var(--pill) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); font-size: 13px; line-height: 1.2; border: 0; cursor: pointer; text-align: left; }
+.float i { width: 7px; height: 7px; border-radius: 50%; background: var(--dot); flex: none; }
+.float small { display: block; font-size: 10px; color: var(--grey); }
+
+/* Project page (projekte/*.html) */
+.gal { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.facts { margin: 0; display: grid; align-content: start; }
+.facts div { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 12px; padding: 11px 0; font-size: 14px; }
+.facts div + div, .row + .row { border-top: 1px solid var(--line); }
+.facts div:first-child { padding-top: 0; }
+.facts dt { color: var(--grey); }
+.facts dd { margin: 0; }
+.pp-hero { padding-block: clamp(32px, 6vw, 72px) 40px; display: grid; gap: 18px; justify-items: start; }
+.pp-h { margin: 0; font: italic 400 clamp(56px, 10vw, 160px)/.92 var(--serif); text-wrap: balance; }
+.pp-name { margin: 0; font-weight: 600; font-size: clamp(18px, 2vw, 24px); letter-spacing: -.02em; }
+.pp-body { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: 8vw; padding-block: clamp(48px, 7vw, 96px) 0; }
+.pp-body .story p { font-size: 17px; line-height: 1.6; max-width: 60ch; margin: 0 0 16px; }
+.pp-body .story p:first-child { font-size: clamp(20px, 2vw, 26px); line-height: 1.35; letter-spacing: -.01em; }
+.pp-gal { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-top: clamp(48px, 7vw, 96px); }
+.pp-gal img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
+.pp-gal img:nth-child(3n+1) { border-radius: 6px 6px 160px 6px; }
+.pp-gal img:nth-child(3n+2) { border-radius: 200px 200px 6px 6px; }
+.pp-gal img:last-child:nth-child(odd) { grid-column: span 2; aspect-ratio: 16 / 9; border-radius: 6px; }
+.pp-next { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: clamp(64px, 9vw, 120px); padding: 22px 24px; border-radius: 20px; background: var(--paper); }
+.pp-next:hover { background: var(--pill); }
+.pp-next .h { font: italic 400 clamp(28px, 3.4vw, 48px)/1 var(--serif); }
+main.pp { padding-bottom: 8px; }
+@media (max-width: 760px) { .pp-body, .pp-gal { grid-template-columns: 1fr; gap: 32px 12px; } .pp-gal img:last-child:nth-child(odd) { grid-column: auto; } }
+.proto { font-size: 11px; color: var(--grey); }
+</style>
+</head>
+<body>
+<header class="top in">
+  <div class="top-l">
+    <a class="pill" href="../index.html#projekte">Projekte</a>
+    <a class="pill hide-s" href="../index.html#stuhlarchiv">Stuhlarchiv</a>
+    <a class="pill hide-s" href="../index.html#haus">Haus</a>
+  </div>
+  <a class="logo" href="../index.html" aria-label="Bihler Möbelkonzepte"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127 85"><path d="M8.18,68.79h3.69V81.06H9.48v-8.3c0-.24,0-.57,0-1v-1L7.17,81.06H4.68L2.37,70.76c0,.24,0,.57,0,1s0,.76,0,1v8.3H0V68.79H3.73L6,78.44Z"/><path d="M22,80a4.22,4.22,0,0,1-3.49,1.42A4.19,4.19,0,0,1,15.07,80a5.23,5.23,0,0,1-1.15-3.41,5.29,5.29,0,0,1,1.15-3.41,4.19,4.19,0,0,1,3.48-1.43A4.22,4.22,0,0,1,22,73.13a5.34,5.34,0,0,1,1.15,3.41A5.28,5.28,0,0,1,22,80M15.8,68.63H18v2H15.8Zm4.34,10a3.47,3.47,0,0,0,.56-2.1,3.43,3.43,0,0,0-.56-2.1,1.88,1.88,0,0,0-1.6-.74,1.91,1.91,0,0,0-1.6.74,3.43,3.43,0,0,0-.56,2.1,3.47,3.47,0,0,0,.56,2.1,1.91,1.91,0,0,0,1.6.74,1.88,1.88,0,0,0,1.6-.74m-1-10H21.3v2H19.13Z"/><path d="M33.06,73.08a5.26,5.26,0,0,1,1,3.33,5.82,5.82,0,0,1-1,3.5,3.25,3.25,0,0,1-2.8,1.39,3.29,3.29,0,0,1-1.82-.45,3.62,3.62,0,0,1-.88-.93v1.14H25.23V68.81H27.6v4.36a3.39,3.39,0,0,1,1-1,3,3,0,0,1,1.64-.41,3.4,3.4,0,0,1,2.82,1.29m-2,5.52a3.27,3.27,0,0,0,.51-1.94,4.53,4.53,0,0,0-.24-1.6,1.92,1.92,0,0,0-3.55,0,4.36,4.36,0,0,0-.26,1.62,3.43,3.43,0,0,0,.52,1.93,1.8,1.8,0,0,0,1.59.77,1.64,1.64,0,0,0,1.43-.75"/><path d="M42.06,72.17a3.81,3.81,0,0,1,1.57,1.34,4.5,4.5,0,0,1,.72,1.88,12.33,12.33,0,0,1,.08,1.8H37.82a2.16,2.16,0,0,0,1,1.91,2.39,2.39,0,0,0,1.31.34A2,2,0,0,0,41.39,79a1.89,1.89,0,0,0,.49-.63h2.43A3,3,0,0,1,43.43,80,4.44,4.44,0,0,1,40,81.37a5,5,0,0,1-3.19-1.12,4.37,4.37,0,0,1-1.39-3.63A4.9,4.9,0,0,1,36.68,73a4.35,4.35,0,0,1,3.25-1.26,5.19,5.19,0,0,1,2.13.42m-3.55,2a2.53,2.53,0,0,0-.63,1.4H42a2,2,0,0,0-.64-1.43,2,2,0,0,0-1.4-.49,1.88,1.88,0,0,0-1.42.52"/><rect x="46.11" y="68.79" width="2.37" height="12.27"/><polygon points="51.19 68.83 53.52 68.83 53.52 75.45 56.51 72.03 59.46 72.03 56.21 75.41 59.59 81.06 56.7 81.06 54.5 77.18 53.52 78.2 53.52 81.06 51.19 81.06 51.19 68.83"/><path d="M68.69,80a5,5,0,0,1-7,0,5.28,5.28,0,0,1-1.15-3.41,5.34,5.34,0,0,1,1.15-3.41,5,5,0,0,1,7,0,5.34,5.34,0,0,1,1.14,3.41A5.28,5.28,0,0,1,68.69,80m-1.9-1.31a3.47,3.47,0,0,0,.56-2.1,3.43,3.43,0,0,0-.56-2.1,2.1,2.1,0,0,0-3.2,0,3.43,3.43,0,0,0-.56,2.1,3.47,3.47,0,0,0,.56,2.1,2.1,2.1,0,0,0,3.2,0"/><path d="M79.28,72.51A3,3,0,0,1,80.16,75v6.11H77.73V75.54a2.67,2.67,0,0,0-.18-1.1,1.37,1.37,0,0,0-1.33-.7,1.64,1.64,0,0,0-1.64,1,3.43,3.43,0,0,0-.23,1.38v4.91H72V72h2.29v1.33a4,4,0,0,1,.87-1A2.94,2.94,0,0,1,77,71.77a3.45,3.45,0,0,1,2.3.74"/><polygon points="82.28 73.92 82.28 71.99 89.45 71.99 89.45 73.96 85 79.11 89.61 79.11 89.61 81.06 81.96 81.06 81.96 79.21 86.46 73.92 82.28 73.92"/><path d="M97.66,72.17a3.72,3.72,0,0,1,1.56,1.34,4.37,4.37,0,0,1,.72,1.88,10.84,10.84,0,0,1,.09,1.8H93.42a2.16,2.16,0,0,0,1,1.91,2.37,2.37,0,0,0,1.31.34A2.05,2.05,0,0,0,97,79a1.89,1.89,0,0,0,.49-.63H99.9A2.93,2.93,0,0,1,99,80a4.41,4.41,0,0,1-3.41,1.33,5,5,0,0,1-3.2-1.12A4.39,4.39,0,0,1,91,76.62,4.9,4.9,0,0,1,92.28,73a4.32,4.32,0,0,1,3.24-1.26,5.24,5.24,0,0,1,2.14.42m-3.55,2a2.47,2.47,0,0,0-.64,1.4h4.09a2,2,0,0,0-.63-1.43,2.07,2.07,0,0,0-1.41-.49,1.84,1.84,0,0,0-1.41.52"/><path d="M109.28,73a4.85,4.85,0,0,1,1.11,3.45,5.41,5.41,0,0,1-1.09,3.65,3.5,3.5,0,0,1-2.79,1.26,2.93,2.93,0,0,1-1.81-.54,3.81,3.81,0,0,1-.77-.88v4.73h-2.35V72h2.28v1.34a3.67,3.67,0,0,1,.82-.94,3,3,0,0,1,1.89-.6A3.59,3.59,0,0,1,109.28,73m-1.82,1.71a1.69,1.69,0,0,0-1.57-.81,1.79,1.79,0,0,0-1.79,1.22,4.62,4.62,0,0,0-.25,1.65A2.6,2.6,0,0,0,104.7,79a1.92,1.92,0,0,0,1.19.38,1.74,1.74,0,0,0,1.53-.77,4,4,0,0,0,0-3.89"/><path d="M111.56,73.76V72.07h1.26V69.54h2.35v2.53h1.47v1.69h-1.47v4.79a1.11,1.11,0,0,0,.14.7,1.54,1.54,0,0,0,.86.14h.47v1.77l-1.12,0a3,3,0,0,1-2.3-.58,1.71,1.71,0,0,1-.4-1.25V73.76Z"/><path d="M124.5,72.17a3.81,3.81,0,0,1,1.57,1.34,4.5,4.5,0,0,1,.72,1.88,12.33,12.33,0,0,1,.08,1.8h-6.61a2.18,2.18,0,0,0,.95,1.91,2.39,2.39,0,0,0,1.31.34,2.06,2.06,0,0,0,1.32-.41,2.19,2.19,0,0,0,.49-.63h2.42a3,3,0,0,1-.88,1.64,4.44,4.44,0,0,1-3.42,1.33,5,5,0,0,1-3.19-1.12,4.37,4.37,0,0,1-1.39-3.63A4.9,4.9,0,0,1,119.12,73a4.35,4.35,0,0,1,3.25-1.26,5.19,5.19,0,0,1,2.13.42m-3.55,2a2.53,2.53,0,0,0-.63,1.4h4.09a2,2,0,0,0-.64-1.43,2,2,0,0,0-1.4-.49,1.88,1.88,0,0,0-1.42.52"/><rect x="21.42" y="6.56" width="6.28" height="3.76"/><rect x="21.4" y="12.89" width="6.28" height="45.25"/><rect x="74.71" y="6.61" width="6.27" height="51.52"/><path d="M98,38.82V51.71H91.76V32.89h13V13a6.41,6.41,0,0,0-6.55-6.39H91.49A6.4,6.4,0,0,0,85,13V51.93a6.26,6.26,0,0,0,6.54,6.21h6.69a6.27,6.27,0,0,0,6.55-6.21V38.82ZM91.76,13.69H98V26.93H91.76Z"/><path d="M120.45,6.61h-12.1V58.14h6.28V13.69h6.09v19.2H127V13a6.41,6.41,0,0,0-6.55-6.39"/><path d="M17.56,29.87h-.25c1.75,0,1.33-1.8,1.33-1.8V13a6.41,6.41,0,0,0-6.54-6.39H0V58.14H12.11a6.4,6.4,0,0,0,6.54-6.37V31.65s0-1.78-1.08-1.78M12.37,51.71H6.28V32.89h6.09Zm0-24.78H6.28V13.69h6.09Z"/><path d="M61.09,26.93H43.48V6.58c0-.36,0-.6,0-.94A5.36,5.36,0,0,0,38.19.37H31V58.14H43.48V38.82H58.73V58.14H70.91V32.22a5.29,5.29,0,0,0-5.28-5.29Z"/></svg></a>
+  <div class="top-r">
+    <a class="pill hide-s" href="../index.html#usm">USM Shop</a>
+    <a class="pill dark" href="../index.html#leistung">Beratung buchen</a>
+  </div>
+</header>
+<main class="pp">
+  <section class="pp-hero in">
+    <a class="pill" href="../index.html#projekte">Alle Projekte</a>
+    <span class="small">Pflege &amp; Gesundheit · Objekt</span>
+    <h1 class="pp-h">Tatütata.</h1>
+    <p class="pp-name">Johanniter Uhldingen Mühlhofen</p>
+  </section>
+  <section class="feature" aria-label="Johanniter Uhldingen Mühlhofen">
+    <img src="../img/johanniter-uhldingen-mue-1.jpg" alt="Johanniter Uhldingen Mühlhofen">
+    <div class="feature-top in"><span>Pflege &amp; Gesundheit</span><span>Uhldingen-Mühlhofen · 2025</span></div>
+  </section>
+  <section class="pp-body in">
+    <div class="story"><p>Das beste Geräusch, wenn man dringend medizinische Hilfe benötigt, ist der Klang eines nahenden Martinhorns. Es zu hören bedeutet, dass Hilfe unterwegs ist.</p><p>Die flächendeckende, optimale Notfallversorgung ist einer der wichtigsten Bausteine für jede Region. Denn: Noch bevor man in der Regel ein Krankenhaus von innen sieht, entscheidet sich oft, wie ein medizinischer Notfall für Patienten ausgeht.</p><p>In Uhldingen – Mühlhofen ist nun die neue Rettungswache der Johanniter Oberschwaben / Bodensee an den Start gegangen. In diesem neuen, auch energetisch vorbildlichen Haus ist alles auf kurze Wege, topp organisiertes und ausgeruhtes Personal ausgerichtet. Ob Ruheräume, Mitarbeiteraufenthalt, die Verwaltung, Seminarraum oder Umkleiden, hier wird kein Bereich dem Zufall überlassen, weder inhaltlich, noch ästhetisch.</p></div>
+    <dl class="facts"><div><dt>Ort</dt><dd>Uhldingen-Mühlhofen</dd></div><div><dt>Auftraggeber</dt><dd>Johanniter Oberschwaben e.V.</dd></div><div><dt>Fertigstellung</dt><dd>2025</dd></div><div><dt>Leistung</dt><dd>Planungskonzept &amp; Lieferung der losen Möblierung, Planung und Umsetzung Innenausbau</dd></div><div><dt>Fotografie</dt><dd>Anja Köhler</dd></div></dl>
+  </section>
+  <section class="pp-gal in"><img src="../img/johanniter-uhldingen-mue-0.jpg" alt="Johanniter Uhldingen Mühlhofen" loading="lazy"><img src="../img/johanniter-uhldingen-mue-2.jpg" alt="Johanniter Uhldingen Mühlhofen" loading="lazy"><img src="../img/johanniter-uhldingen-mue-3.jpg" alt="Johanniter Uhldingen Mühlhofen" loading="lazy"></section>
+  <section class="sec in">
+    <div class="sh"><h2>Weitere Projekte. <span class="g">Pflege &amp; Gesundheit</span></h2><a class="pill" href="../index.html#projekte">Alle Projekte</a></div>
+    <div class="grid"><a class="card" href="hospiz-waldshut-tiengen.html"><div class="ph"><img src="../img/hospiz-waldshut-tiengen-1.jpg" alt="Hospiz Waldshut-Tiengen" loading="lazy"></div><h3>Kokon.</h3><div class="meta"><b>Hospiz Waldshut-Tiengen</b><span>Waldshut-Tiengen</span><span>2026</span></div></a><a class="card" href="zahnarztpraxis-baindt.html"><div class="ph"><img src="../img/zahnarztpraxis-baindt-0.jpg" alt="Gemeinschaftspraxis Dr. Hinderer &amp; Dr. Heinrich" loading="lazy"></div><h3>Bling Bling?</h3><div class="meta"><b>Gemeinschaftspraxis Dr. Hinderer &amp; Dr. Heinrich</b><span></span><span>2022</span></div></a><a class="card" href="qbify-lake-invest-Villa-am-See.html"><div class="ph"><img src="../img/qbify-lake-invest-Villa--0.jpg" alt="Villa am See, Lake Invest" loading="lazy"></div><h3>Der Sound des Sees.</h3><div class="meta"><b>Villa am See, Lake Invest</b><span>Überlingen Nußdorf</span><span>2026</span></div></a><a class="card" href="actico-friedrichshafen.html"><div class="ph"><img src="../img/actico-friedrichshafen-1.jpg" alt="Actico Friedrichshafen" loading="lazy"></div><h3>smart decision.</h3><div class="meta"><b>Actico Friedrichshafen</b><span>Friedrichshafen</span><span>2024</span></div></a><a class="card" href="ravensburger-cos.html"><div class="ph"><img src="../img/ravensburger-cos-0.jpg" alt="Ravensburger COS" loading="lazy"></div><h3>Work. And play!</h3><div class="meta"><b>Ravensburger COS</b><span>Ravensburg</span><span></span></div></a></div>
+  </section>
+  <div class="in"><a class="pp-next" href="ravensburger-cos.html"><span class="small">Nächstes Projekt</span><span class="h">Work. And play!</span><span class="pill dark">Ravensburger COS</span></a></div>
+</main>
+<footer class="in" id="newsletter">
+  <div class="fnews">
+    <div><h3 class="fh">Newsletter.</h3><p class="small">Neue Projekte, Marken und Termine aus dem Haus in Ravensburg.</p></div>
+    <form class="nl" id="nl-form" novalidate>
+      <label class="sr" for="nl-mail">E-Mail-Adresse</label>
+      <input id="nl-mail" name="email" type="email" autocomplete="email" placeholder="E-Mail-Adresse">
+      <button class="pill dark" type="submit">Anmelden</button>
+      <p class="small" id="nl-note" aria-live="polite"></p>
+    </form>
+  </div>
+  <div class="foot-cols">
+    <div><h4>Projekte</h4><p><a href="../index.html#projekte">Arbeiten</a><br><a href="../index.html#projekte">Pflege &amp; Gesundheit</a><br><a href="../index.html#projekte">Lernen</a><br><a href="../index.html#projekte">Gastgeben</a><br><a href="../index.html#projekte">Wohnen</a></p></div>
+    <div><h4>Bihler</h4><p><a href="../index.html#leistung">Leistung</a><br><a href="../index.html#haus">Haus &amp; Sommerfest</a><br><a href="../index.html#leistung">Beratung buchen</a><br>Jobs · Innenarchitekt (m/w/d)</p></div>
+    <div><h4>Marken &amp; Häuser</h4><p><a href="../index.html#usm">USM Shop</a><br><a href="../index.html#stuhlarchiv">Stuhlarchiv</a><br><a href="../index.html#holzwerk">holzwerk GmbH</a></p></div>
+    <div><h4>Kontakt</h4><p>Bihler Möbelkonzepte<br>Ravensburg</p><p class="social"><a class="pill" href="https://www.instagram.com/bihler_moebelkonzepte/" target="_blank" rel="noopener">Instagram</a></p></div>
+  </div>
+  <div class="fbottom">
+    <a class="foot-logo" href="../index.html" aria-label="Bihler"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127 59"><path d="M8.18,68.79h3.69V81.06H9.48v-8.3c0-.24,0-.57,0-1v-1L7.17,81.06H4.68L2.37,70.76c0,.24,0,.57,0,1s0,.76,0,1v8.3H0V68.79H3.73L6,78.44Z"/><path d="M22,80a4.22,4.22,0,0,1-3.49,1.42A4.19,4.19,0,0,1,15.07,80a5.23,5.23,0,0,1-1.15-3.41,5.29,5.29,0,0,1,1.15-3.41,4.19,4.19,0,0,1,3.48-1.43A4.22,4.22,0,0,1,22,73.13a5.34,5.34,0,0,1,1.15,3.41A5.28,5.28,0,0,1,22,80M15.8,68.63H18v2H15.8Zm4.34,10a3.47,3.47,0,0,0,.56-2.1,3.43,3.43,0,0,0-.56-2.1,1.88,1.88,0,0,0-1.6-.74,1.91,1.91,0,0,0-1.6.74,3.43,3.43,0,0,0-.56,2.1,3.47,3.47,0,0,0,.56,2.1,1.91,1.91,0,0,0,1.6.74,1.88,1.88,0,0,0,1.6-.74m-1-10H21.3v2H19.13Z"/><path d="M33.06,73.08a5.26,5.26,0,0,1,1,3.33,5.82,5.82,0,0,1-1,3.5,3.25,3.25,0,0,1-2.8,1.39,3.29,3.29,0,0,1-1.82-.45,3.62,3.62,0,0,1-.88-.93v1.14H25.23V68.81H27.6v4.36a3.39,3.39,0,0,1,1-1,3,3,0,0,1,1.64-.41,3.4,3.4,0,0,1,2.82,1.29m-2,5.52a3.27,3.27,0,0,0,.51-1.94,4.53,4.53,0,0,0-.24-1.6,1.92,1.92,0,0,0-3.55,0,4.36,4.36,0,0,0-.26,1.62,3.43,3.43,0,0,0,.52,1.93,1.8,1.8,0,0,0,1.59.77,1.64,1.64,0,0,0,1.43-.75"/><path d="M42.06,72.17a3.81,3.81,0,0,1,1.57,1.34,4.5,4.5,0,0,1,.72,1.88,12.33,12.33,0,0,1,.08,1.8H37.82a2.16,2.16,0,0,0,1,1.91,2.39,2.39,0,0,0,1.31.34A2,2,0,0,0,41.39,79a1.89,1.89,0,0,0,.49-.63h2.43A3,3,0,0,1,43.43,80,4.44,4.44,0,0,1,40,81.37a5,5,0,0,1-3.19-1.12,4.37,4.37,0,0,1-1.39-3.63A4.9,4.9,0,0,1,36.68,73a4.35,4.35,0,0,1,3.25-1.26,5.19,5.19,0,0,1,2.13.42m-3.55,2a2.53,2.53,0,0,0-.63,1.4H42a2,2,0,0,0-.64-1.43,2,2,0,0,0-1.4-.49,1.88,1.88,0,0,0-1.42.52"/><rect x="46.11" y="68.79" width="2.37" height="12.27"/><polygon points="51.19 68.83 53.52 68.83 53.52 75.45 56.51 72.03 59.46 72.03 56.21 75.41 59.59 81.06 56.7 81.06 54.5 77.18 53.52 78.2 53.52 81.06 51.19 81.06 51.19 68.83"/><path d="M68.69,80a5,5,0,0,1-7,0,5.28,5.28,0,0,1-1.15-3.41,5.34,5.34,0,0,1,1.15-3.41,5,5,0,0,1,7,0,5.34,5.34,0,0,1,1.14,3.41A5.28,5.28,0,0,1,68.69,80m-1.9-1.31a3.47,3.47,0,0,0,.56-2.1,3.43,3.43,0,0,0-.56-2.1,2.1,2.1,0,0,0-3.2,0,3.43,3.43,0,0,0-.56,2.1,3.47,3.47,0,0,0,.56,2.1,2.1,2.1,0,0,0,3.2,0"/><path d="M79.28,72.51A3,3,0,0,1,80.16,75v6.11H77.73V75.54a2.67,2.67,0,0,0-.18-1.1,1.37,1.37,0,0,0-1.33-.7,1.64,1.64,0,0,0-1.64,1,3.43,3.43,0,0,0-.23,1.38v4.91H72V72h2.29v1.33a4,4,0,0,1,.87-1A2.94,2.94,0,0,1,77,71.77a3.45,3.45,0,0,1,2.3.74"/><polygon points="82.28 73.92 82.28 71.99 89.45 71.99 89.45 73.96 85 79.11 89.61 79.11 89.61 81.06 81.96 81.06 81.96 79.21 86.46 73.92 82.28 73.92"/><path d="M97.66,72.17a3.72,3.72,0,0,1,1.56,1.34,4.37,4.37,0,0,1,.72,1.88,10.84,10.84,0,0,1,.09,1.8H93.42a2.16,2.16,0,0,0,1,1.91,2.37,2.37,0,0,0,1.31.34A2.05,2.05,0,0,0,97,79a1.89,1.89,0,0,0,.49-.63H99.9A2.93,2.93,0,0,1,99,80a4.41,4.41,0,0,1-3.41,1.33,5,5,0,0,1-3.2-1.12A4.39,4.39,0,0,1,91,76.62,4.9,4.9,0,0,1,92.28,73a4.32,4.32,0,0,1,3.24-1.26,5.24,5.24,0,0,1,2.14.42m-3.55,2a2.47,2.47,0,0,0-.64,1.4h4.09a2,2,0,0,0-.63-1.43,2.07,2.07,0,0,0-1.41-.49,1.84,1.84,0,0,0-1.41.52"/><path d="M109.28,73a4.85,4.85,0,0,1,1.11,3.45,5.41,5.41,0,0,1-1.09,3.65,3.5,3.5,0,0,1-2.79,1.26,2.93,2.93,0,0,1-1.81-.54,3.81,3.81,0,0,1-.77-.88v4.73h-2.35V72h2.28v1.34a3.67,3.67,0,0,1,.82-.94,3,3,0,0,1,1.89-.6A3.59,3.59,0,0,1,109.28,73m-1.82,1.71a1.69,1.69,0,0,0-1.57-.81,1.79,1.79,0,0,0-1.79,1.22,4.62,4.62,0,0,0-.25,1.65A2.6,2.6,0,0,0,104.7,79a1.92,1.92,0,0,0,1.19.38,1.74,1.74,0,0,0,1.53-.77,4,4,0,0,0,0-3.89"/><path d="M111.56,73.76V72.07h1.26V69.54h2.35v2.53h1.47v1.69h-1.47v4.79a1.11,1.11,0,0,0,.14.7,1.54,1.54,0,0,0,.86.14h.47v1.77l-1.12,0a3,3,0,0,1-2.3-.58,1.71,1.71,0,0,1-.4-1.25V73.76Z"/><path d="M124.5,72.17a3.81,3.81,0,0,1,1.57,1.34,4.5,4.5,0,0,1,.72,1.88,12.33,12.33,0,0,1,.08,1.8h-6.61a2.18,2.18,0,0,0,.95,1.91,2.39,2.39,0,0,0,1.31.34,2.06,2.06,0,0,0,1.32-.41,2.19,2.19,0,0,0,.49-.63h2.42a3,3,0,0,1-.88,1.64,4.44,4.44,0,0,1-3.42,1.33,5,5,0,0,1-3.19-1.12,4.37,4.37,0,0,1-1.39-3.63A4.9,4.9,0,0,1,119.12,73a4.35,4.35,0,0,1,3.25-1.26,5.19,5.19,0,0,1,2.13.42m-3.55,2a2.53,2.53,0,0,0-.63,1.4h4.09a2,2,0,0,0-.64-1.43,2,2,0,0,0-1.4-.49,1.88,1.88,0,0,0-1.42.52"/><rect x="21.42" y="6.56" width="6.28" height="3.76"/><rect x="21.4" y="12.89" width="6.28" height="45.25"/><rect x="74.71" y="6.61" width="6.27" height="51.52"/><path d="M98,38.82V51.71H91.76V32.89h13V13a6.41,6.41,0,0,0-6.55-6.39H91.49A6.4,6.4,0,0,0,85,13V51.93a6.26,6.26,0,0,0,6.54,6.21h6.69a6.27,6.27,0,0,0,6.55-6.21V38.82ZM91.76,13.69H98V26.93H91.76Z"/><path d="M120.45,6.61h-12.1V58.14h6.28V13.69h6.09v19.2H127V13a6.41,6.41,0,0,0-6.55-6.39"/><path d="M17.56,29.87h-.25c1.75,0,1.33-1.8,1.33-1.8V13a6.41,6.41,0,0,0-6.54-6.39H0V58.14H12.11a6.4,6.4,0,0,0,6.54-6.37V31.65s0-1.78-1.08-1.78M12.37,51.71H6.28V32.89h6.09Zm0-24.78H6.28V13.69h6.09Z"/><path d="M61.09,26.93H43.48V6.58c0-.36,0-.6,0-.94A5.36,5.36,0,0,0,38.19.37H31V58.14H43.48V38.82H58.73V58.14H70.91V32.22a5.29,5.29,0,0,0-5.28-5.29Z"/></svg></a>
+    <p class="proto">Impressum · Datenschutz<br>Prototyp, November 2026. Inhalte und Fotografie von bihler.net und stuhlarchiv.de.</p>
+  </div>
+  <script>
+  (() => { const f = document.getElementById("nl-form"); if (!f) return;
+    f.addEventListener("submit", e => { e.preventDefault();
+      const v = document.getElementById("nl-mail").value.trim(), n = document.getElementById("nl-note");
+      n.textContent = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v) ? "Prototyp: Hier kommt die Bestätigung der Anmeldung." : "Bitte eine gültige E-Mail-Adresse eingeben."; }); })();
+  </script>
+</footer>
+<a class="float" href="../index.html#leistung"><i></i><span><small>Beratung</small>Termin buchen</span></a>
+</body>
+</html>
